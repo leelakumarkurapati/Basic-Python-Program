@@ -1,0 +1,8 @@
+// write a python program to give the vote eligible for a person
+
+v = int(input("Enter your age: "))
+
+if v >= 18:
+    print("Eligible to vote")
+else:
+    print("Not eligible to vote")
