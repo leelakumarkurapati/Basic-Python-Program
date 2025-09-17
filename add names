@@ -1,0 +1,6 @@
+//concentrate First name &last name  
+
+a = input("Enter the first name: ")
+b = input("Enter the last name: ")
+c = a + " " + b
+print("Your full name:", c)
