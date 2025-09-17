@@ -1,0 +1,19 @@
+# Program to check the day of the week based on user input
+week = int(input("Enter the week number (1 for Monday, 7 for Sunday): "))
+
+if week == 1:
+    print("MONDAY")
+elif week == 2:
+    print("TUESDAY")
+elif week == 3:
+    print("WEDNESDAY")
+elif week == 4:
+    print("THURSDAY")
+elif week == 5:
+    print("FRIDAY")
+elif week == 6:
+    print("SATURDAY")
+elif week == 7:
+    print("SUNDAY")
+else:
+    print("Invalid input! Please enter a number between 1 and 7.")
