@@ -1,0 +1,12 @@
+//write a python program to check the body temperature(FEVER,NORMAL&COLD)
+
+temp = int(input("Check the body temperature: "))
+
+if temp >= 100:
+    print("FEVER")
+elif 97 <= temp <= 99:
+    print("NORMAL")
+elif temp < 97:
+    print("COLD")
+else:
+    print("Invalid temperature")
