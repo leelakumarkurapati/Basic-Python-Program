@@ -1,0 +1,2 @@
+m = int(input("Enter the value: "))
+print(m%5==0 and m%11==0)
