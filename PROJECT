@@ -1,0 +1,61 @@
+//FOOD CENTER
+
+
+print("Welcome to our food center! Choose your menu:")
+print("Sir what is your order")
+print("Here's is our list,sir!")
+
+print("1. Tiffins items - 100 Rupees")
+print("2. Meals - 150 Rupees")
+print("3. Juice items - 50 Rupees")
+print("4. Snacks - 70 Rupees")
+print("5. Show all the menu")
+print("6. Show my order")
+print("7. Show offers on meals")
+
+order = {}
+prices = {1: 100, 2: 150, 3: 50, 4: 70}
+
+while True:
+    choice = int(input("Enter your choice (or 0 to exit): "))
+
+    if choice == 0:
+        print("Thank you for visiting!")
+        break
+
+    elif choice in [1, 2, 3, 4]:
+        qty = int(input("Enter quantity: "))
+        if choice in order:
+            order[choice] += qty
+        else:
+            order[choice] = qty
+        print(f"Added {qty} items.")
+
+    elif choice == 5:
+        print("Menu:")
+        print("1. Tiffins items - 100 Rupees")
+        print("2. Meals - 150 Rupees")
+        print("3. Juice items - 50 Rupees")
+        print("4. Snacks - 70 Rupees")
+
+    elif choice == 6:
+        if not order:
+            print("Your order is empty.")
+        else:
+            print("Your order:")
+            total = 0
+            for item, qty in order.items():
+                price = prices[item] * qty
+                total += price
+                print(f"Item {item}: Quantity {qty}, Total Price {price} Rupees")
+            print(f"Total amount to pay: {total} Rupees")
+
+    elif choice == 7:
+        print("Special Offers:")
+        print("1. Tiffins items: Buy 2 get 1 free")
+        print("2. Meals: 10% discount if you order 3 or more")
+        print("3. Juice items: Buy 5 get 1 free")
+        print("4. Snacks: Flat 20 Rupees off if total snacks cost > 200")
+
+    else:
+        print("Invalid choice, please try again.")
