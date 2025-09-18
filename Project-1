@@ -1,0 +1,66 @@
+print("Welcome to our food center! Choose your menu:")
+print("Sir what is your order")
+print("Here's our list, sir!")
+
+menu = {
+    1: ("Tiffins items", 100),
+    2: ("Meals", 150),
+    3: ("Chicken Biryani", 200),
+    4: ("Chicken Fry Biryani", 250),
+    5: ("Mutton Biryani", 300),
+    6: ("Juice items", 50),
+    7: ("Snacks", 70),
+}
+
+def show_menu():
+    print("Menu:")
+    for key, (item, price) in menu.items():
+        print(f"{key}. {item} - {price} Rupees")
+    print("8. Show all the menu")
+    print("9. Show my order")
+    print("10. Show offers on meals")
+    print("0. Exit")
+
+order = {}
+
+while True:
+    show_menu()
+    choice = int(input("Enter your choice (or 0 to exit): "))
+
+    if choice == 0:
+        print("Thank you for visiting!")
+        break
+
+    elif choice in menu:
+        qty = int(input(f"Enter quantity for {menu[choice][0]}: "))
+        if choice in order:
+            order[choice] += qty
+        else:
+            order[choice] = qty
+        print(f"Added {qty} {menu[choice][0]}(s) to your order.")
+
+    elif choice == 8:
+        show_menu()
+
+    elif choice == 9:
+        if not order:
+            print("Your order is empty.")
+        else:
+            print("Your current order:")
+            total = 0
+            for item_num, qty in order.items():
+                item_name, price = menu[item_num]
+                cost = price * qty
+                total += cost
+                print(f"{item_name}: Quantity {qty}, Cost {cost} Rupees")
+            print(f"Total amount: {total} Rupees")
+
+    elif choice == 10:
+        print("Special Offers:")
+        print("1. Tiffins items: Buy 2 get 1 free")
+        print("2. Meals: 10% discount if you order 3 or more")
+        print("3. Juice items: Buy 5 get 1 free")
+        print("4. Snacks: Flat 20 Rupees off if total snacks cost > 200")
+
+    else:
+        print("Invalid choice, please try again.")
