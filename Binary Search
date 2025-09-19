@@ -1,3 +1,4 @@
+//write a python program in binary search
 def binary_search(arr, target):
     left = 0                   
     right = len(arr) - 1       
